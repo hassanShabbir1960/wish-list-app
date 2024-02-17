@@ -10,7 +10,7 @@ def get_products(request,category=None):
     else:
         ## When no category is specified, return all products
         products = Product.objects.all()
-
+    print(products)
     serializer = ProductSerializer(products, many=True)
     return JsonResponse({
                         "products": serializer.data
